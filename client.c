@@ -16,7 +16,7 @@ void
 usage()
 {
         extern char *__progname;
-	fprintf(stdout, "Usage: %s host port username\n", __progname);
+	fprintf(stdout, "Usage: %s host port username\n", progname);
 	exit(1);
 }
 

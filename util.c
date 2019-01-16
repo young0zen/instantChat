@@ -39,7 +39,7 @@ talk_to(int writeFd, char *name)
                 add_name(buffer, name);
                 write(writeFd,buffer, WIDTH);
         }
-                                                                                
+
         free(buffer);
         close(writeFd);
 }
@@ -65,7 +65,7 @@ start_talking(int conn, char *name)
 
 	pthread_kill(tid, SIGINT); 
 	/* if writing thread ends early, stop reading thread */
-              
+
         void *retval;
         error = pthread_join(tid, &retval);
 }

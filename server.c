@@ -15,14 +15,17 @@
 int	bind_to(char *);
 int	accept_conn(int fd);
 
-void usage() {
+void
+usage()
+{
 	extern char *__progname;
 	fprintf(stdout, "Usage: %s port username\n", __progname);
 	exit(1);
 }
 
-int main(int argc, char *argv[]) {
-	
+int
+main(int argc, char *argv[])
+{
 	if (argc != 3)
 		usage();
 
@@ -32,12 +35,14 @@ int main(int argc, char *argv[]) {
 	int fd = bind_to(port);
 	int conn = accept_conn(fd);
 	start_talking(conn, username);
-	
+
 	close(fd);
 	return 0;
 }
 
-int bind_to(char *port) {
+int
+bind_to(char *port)
+{
 	struct addrinfo hints;
 	struct addrinfo *rp, *result;
 	int s, sfd;
